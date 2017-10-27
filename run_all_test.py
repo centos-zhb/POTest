@@ -37,7 +37,7 @@ test_report = './mail/report/'
 discover = unittest.defaultTestLoader.discover(test_dir,pattern = 'login_case.py')
 
 if __name__ == '__main__':
-    now = time.strftime("%Y-%m-%d %H_%M_%S")
+    now = time.strftime("%Y-%m-%d-%H_%M_%S")
     filename = test_report + now + '_result.html'
     fp = open(filename,'wb')
     runner = HTMLTestRunner(stream=fp,

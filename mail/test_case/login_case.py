@@ -17,7 +17,7 @@ class LoginTest(myunit.MyTest):
         po.login_action('','')
         sleep(2)
         self.assertEqual(po.login_error_hint(),'请输入帐号')
-        function.insert_img(self.driver,'user_pwd_null.jpg')
+        function.insert_img(self.driver,'user_pwd_null.png')
 
     def test_login_pwd_null(self):
         '''密码为空登录'''
@@ -26,7 +26,7 @@ class LoginTest(myunit.MyTest):
         po.login_action('abc','')
         sleep(2)
         self.assertEqual(po.login_error_hint(),'请输入密码')
-        function.insert_img(self.driver,'pwd_null.jpg')
+        function.insert_img(self.driver,'pwd_null.png')
 
     def test_login_user_pwd_error(self):
          '''用户名或密码错误'''
@@ -38,7 +38,7 @@ class LoginTest(myunit.MyTest):
          sleep(2)
          #print(po.login_error_hint())
          self.assertEqual(po.login_error_hint(),'帐号或密码错误')
-         function.insert_img(self.driver, "user_pwd_error.jpg")
+         function.insert_img(self.driver, "user_pwd_error.png")
 
     def test_login_success(self):
         '''用户名、密码正确,登录成功'''
@@ -50,4 +50,4 @@ class LoginTest(myunit.MyTest):
         po2 = MailPage(self.driver)
         #print(po2.login_success_user())
         self.assertEqual(po2.login_success_user(),user+"@163.com")
-        function.insert_img(self.driver, "success.jpg")
+        function.insert_img(self.driver, "success.png")

@@ -33,12 +33,12 @@ def new_report(testreport):
 
 #指定测试用例为当前文件夹下的test_case目录
 test_dir = './mail/test_case'
-test_report = './mail/report'
+test_report = './mail/report/'
 discover = unittest.defaultTestLoader.discover(test_dir,pattern = 'login_case.py')
 
 if __name__ == '__main__':
     now = time.strftime("%Y-%m-%d %H_%M_%S")
-    filename = test_report + '/' + now + 'result.html'
+    filename = test_report + now + '_result.html'
     fp = open(filename,'wb')
     runner = HTMLTestRunner(stream=fp,
                             title='测试报告',
